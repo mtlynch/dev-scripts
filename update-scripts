@@ -27,10 +27,10 @@ readonly GOLDEN_DEV_SCRIPTS="${PWD}/dev-scripts"
 
 for f in "${GOLDEN_DEV_SCRIPTS}/"*; do
   FILENAME="$(basename "${f}")"
-  readonly TARGET_SCRIPT="${TARGET_DEV_SCRIPTS}/${FILENAME}"
+  TARGET_SCRIPT="${TARGET_DEV_SCRIPTS}/${FILENAME}"
   if [[ ! -f "${TARGET_SCRIPT}" ]]; then
     continue
   fi
-  readonly GOLDEN_SCRIPT="${GOLDEN_DEV_SCRIPTS}/${FILENAME}"
+  GOLDEN_SCRIPT="${GOLDEN_DEV_SCRIPTS}/${FILENAME}"
   cp "${GOLDEN_SCRIPT}" "${TARGET_SCRIPT}"
 done
