@@ -22,7 +22,6 @@ fi
 cd "$(mktemp --directory)"
 
 git clone https://github.com/mtlynch/dev-scripts .
-git checkout update-scripts # TEMP
 readonly GOLDEN_DEV_SCRIPTS="${PWD}/dev-scripts"
 
 for f in "${GOLDEN_DEV_SCRIPTS}/"*; do
