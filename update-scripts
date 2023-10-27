@@ -13,7 +13,7 @@ set -x
 # dev-scripts repo.
 
 readonly TARGET_DEV_SCRIPTS="${PWD}/dev-scripts"
-if [[ ! -d "${TARGET_DEV_SCRIPTS}" ]; then
+if [[ ! -d "${TARGET_DEV_SCRIPTS}" ]]; then
   echo "No dev-scripts directory found"
   echo "Run this from a project with a dev-scripts directory."
   exit 1
