@@ -32,4 +32,5 @@ for f in "${GOLDEN_DEV_SCRIPTS}/"*; do
   fi
   GOLDEN_SCRIPT="${GOLDEN_DEV_SCRIPTS}/${FILENAME}"
   cp "${GOLDEN_SCRIPT}" "${TARGET_SCRIPT}"
+  chmod +x "${TARGET_SCRIPT}"
 done
