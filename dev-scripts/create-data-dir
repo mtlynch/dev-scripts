@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Create a data directory as a RAMdisk so that we're not writing sensitive data
+# to disk.
+
+# Exit on first failure.
+set -e
+
+# Exit on unset variable.
+set -u
+
+# Echo commands before executing them, by default to stderr.
+set -x
+
+# For simplicity, this script isn't cross-platform, but it wouldn't be that hard
+# to adjust it if we need to.
+if [[ "${OSTYPE}" == "darwin"* ]]; then
+  echo "This script requires Linux" >&2
+  exit 1
+fi
+
+readonly DATA_DIR='./data'
+readonly DIR_SIZE='300M'
+
+# Create a RAMdisk if one does not already exist.
+if [[ ! -d "${DATA_DIR}" ]]; then
+  sudo mkdir -p "${DATA_DIR}"
+  sudo mount --types tmpfs --options size="${DIR_SIZE}" tmpfs "${DATA_DIR}"
+fi
+
+sudo chown -R "${USER}" "${DATA_DIR}"
