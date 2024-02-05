@@ -15,8 +15,7 @@ Updates `dev-scripts` in a Github repo, replacing all the available scripts with
 The script only replaces files that exist in the local repo. For example, if your repo doesn't have a file at the path `dev-scripts/check-go-formatting`, then `update-scripts` won't place this file in your repo.
 
 ```bash
-cd other-project
 curl \
-  https://raw.githubusercontent.com/mtlynch/dev-scripts/master/update-scripts \
+  https://raw.githubusercontent.com/mtlynch/dev-scripts/master/dev-scripts/update-scripts \
   | bash
 ```
